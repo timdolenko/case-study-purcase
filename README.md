@@ -33,7 +33,7 @@ In the current state, the app looks like this:
 ## Test Account
 
 In order for you to test your integration, please use the following test account from Germany:
-* Email: `{account}@sumup.com`
+* Email: `dev_mdeuf3am@sumup.com`
 * Password: `extdev`
 
 
