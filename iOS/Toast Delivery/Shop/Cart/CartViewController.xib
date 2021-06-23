@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="ToastDelivery" customModuleProvider="target">
+            <connections>
+                <outlet property="toastNameLabel" destination="IAX-WV-T1B" id="Sw3-gv-QVX"/>
+                <outlet property="toastPriceLabel" destination="IAX-WV-T1B" id="jFq-ld-2Ma"/>
+                <outlet property="view" destination="DVl-wj-uha" id="1cu-o3-BOv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DVl-wj-uha">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCb-fB-OyS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.72816780821917804" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="PEI-ja-Sae"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-3K-5u5" customClass="RoundedRectButton" customModule="ToastDelivery" customModuleProvider="target">
+                    <rect key="frame" x="169.5" y="64" width="75" height="40"/>
+                    <state key="normal" title="Purchase">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Selected Toast&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0m-B8-5rn">
+                    <rect key="frame" x="8" y="9" width="398" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Price&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAX-WV-T1B">
+                    <rect key="frame" x="8" y="35" width="398" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="k9X-1V-g38"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="k9X-1V-g38" firstAttribute="trailing" secondItem="IAX-WV-T1B" secondAttribute="trailing" constant="8" id="16X-mb-19l"/>
+                <constraint firstItem="k9X-1V-g38" firstAttribute="trailing" secondItem="DCb-fB-OyS" secondAttribute="trailing" id="1rm-dS-08w"/>
+                <constraint firstItem="IAX-WV-T1B" firstAttribute="top" secondItem="V0m-B8-5rn" secondAttribute="bottom" constant="2" id="35g-9A-ew4"/>
+                <constraint firstItem="V0m-B8-5rn" firstAttribute="top" secondItem="DCb-fB-OyS" secondAttribute="bottom" constant="8" id="EAo-Vr-inF"/>
+                <constraint firstItem="Yzl-3K-5u5" firstAttribute="top" secondItem="IAX-WV-T1B" secondAttribute="bottom" constant="8" id="STQ-Fo-tgn"/>
+                <constraint firstItem="V0m-B8-5rn" firstAttribute="leading" secondItem="DVl-wj-uha" secondAttribute="leading" constant="8" id="Yn0-au-p2j"/>
+                <constraint firstItem="k9X-1V-g38" firstAttribute="bottom" secondItem="Yzl-3K-5u5" secondAttribute="bottom" constant="8" id="ZVj-il-Tak"/>
+                <constraint firstItem="DCb-fB-OyS" firstAttribute="leading" secondItem="k9X-1V-g38" secondAttribute="leading" id="ZXP-Vd-nXL"/>
+                <constraint firstItem="Yzl-3K-5u5" firstAttribute="centerX" secondItem="DVl-wj-uha" secondAttribute="centerX" id="crR-cj-EAT"/>
+                <constraint firstItem="DCb-fB-OyS" firstAttribute="top" secondItem="DVl-wj-uha" secondAttribute="top" id="hac-8f-Lb8"/>
+                <constraint firstItem="IAX-WV-T1B" firstAttribute="leading" secondItem="k9X-1V-g38" secondAttribute="leading" constant="8" id="n0i-OI-uQo"/>
+                <constraint firstAttribute="trailing" secondItem="V0m-B8-5rn" secondAttribute="trailing" constant="8" id="nRx-d3-F1x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-149.27536231884059" y="-602.00892857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

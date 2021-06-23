@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_toast"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/toast_item_background"
+    android:orientation="horizontal"
+    android:padding="@dimen/toast_item_padding">
+
+    <ImageView
+        android:id="@+id/iv_toast"
+        android:layout_width="@dimen/toast_image_size"
+        android:layout_height="@dimen/toast_image_size"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/toast_image_padding"
+        android:scaleType="fitXY"
+        tools:src="@drawable/avocado_toast" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/light_grey"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/toast_text_horizontal_padding"
+        android:paddingEnd="@dimen/toast_text_horizontal_padding">
+
+        <TextView
+            android:id="@+id/tv_toast_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/tv_toast_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mid_grey"
+            tools:text="3.99EUR" />
+    </LinearLayout>
+
+</LinearLayout>

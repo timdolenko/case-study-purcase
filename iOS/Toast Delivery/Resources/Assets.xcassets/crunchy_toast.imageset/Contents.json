@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "crunchy_toast.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

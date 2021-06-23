@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Avocado Toast",
+    "price": "5.99",
+    "image_name": "avocado_toast"
+  },
+  {
+    "name": "Bacon Toast",
+    "price": "1.99",
+    "image_name": "bacon_toast"
+  },
+  {
+    "name": "Crunchy Toast",
+    "price": "0.99",
+    "image_name": "crunchy_toast"
+  },
+  {
+    "name": "Egg in the basket",
+    "price": "2.99",
+    "image_name": "egg_in_the_basket"
+  },
+  {
+    "name": "French Toast",
+    "price": "3.99",
+    "image_name": "french_toast"
+  },
+  {
+    "name": "Milk Toast",
+    "price": "1.99",
+    "image_name": "milk_toast"
+  },
+  {
+    "name": "Ogura Toast",
+    "price": "4.99",
+    "image_name": "ogura_toast"
+  },
+  {
+    "name": "Prawn Sesame Toast",
+    "price": "5.99",
+    "image_name": "prawn_sesame_toast"
+  },
+  {
+    "name": "Toast Hawaii",
+    "price": "3.99",
+    "image_name": "toast_hawaii"
+  },
+  {
+    "name": "Hummus Toast",
+    "price": "1.99",
+    "image_name": "hummus_toast"
+  },
+  {
+    "name": "Whipped Ricotta Toast",
+    "price": "2.99",
+    "image_name": "whipped_ricotta_toast"
+  },
+  {
+    "name": "Sweet Potato Toast",
+    "price": "3.99",
+    "image_name": "sweet_potato_toast"
+  },
+  {
+    "name": "Tuna Toast",
+    "price": "2.99",
+    "image_name": "tuna_toast"
+  }
+]

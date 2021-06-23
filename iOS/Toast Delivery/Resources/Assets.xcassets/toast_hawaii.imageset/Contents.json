@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "toast_hawaii.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

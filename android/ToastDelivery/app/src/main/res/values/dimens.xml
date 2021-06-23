@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toast_item_padding">4dp</dimen>
+    <dimen name="toast_image_background_corner_radius">16dp</dimen>
+    <dimen name="toast_image_padding">8dp</dimen>
+    <dimen name="toast_image_size">72dp</dimen>
+    <dimen name="toast_text_horizontal_padding">8dp</dimen>
+
+    <dimen name="cart_padding">12dp</dimen>
+    <dimen name="recycler_view_padding">12dp</dimen>
+    <dimen name="btn_purchase_top_margin">12dp</dimen>
+</resources>
