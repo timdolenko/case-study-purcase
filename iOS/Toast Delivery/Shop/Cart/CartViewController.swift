@@ -6,6 +6,13 @@
 import UIKit
 import Combine
 
+fileprivate struct Placeholders {
+    var toastName: String = "<Selected Toast>"
+    var price: String = "<Price>"
+}
+
+fileprivate var placeholders = Placeholders()
+
 class CartViewController: UIViewController {
     
     @Published var toast: ToastItem?
@@ -32,9 +39,21 @@ class CartViewController: UIViewController {
     }
     
     private func bind() {
-        $toast
-            .map { $0?.name }
+        let toast = $toast
+            .share()
+            
+        toast
+            .map { $0?.name ?? placeholders.toastName }
             .assign(to: \.text, on: toastNameLabel)
+            .store(in: &bindings)
+        
+        toast
+            .map {
+                guard let toast = $0 else { return placeholders.price }
+                
+                return env.currencyService.format(price: toast.price)
+            }
+            .assign(to: \.text, on: toastPriceLabel)
             .store(in: &bindings)
     }
 }

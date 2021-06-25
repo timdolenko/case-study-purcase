@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,11 @@
 		1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E983260506FB002F6892 /* CheckoutAPI.m */; };
 		13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839C9260DE503004ED3B3 /* LoginController.swift */; };
 		13F839D2260DE578004ED3B3 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839D1260DE578004ED3B3 /* TokenResponse.swift */; };
+		227356B82685BAC200146688 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356B72685BAC200146688 /* Environment.swift */; };
+		227356BB2685BAF100146688 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = 227356BA2685BAF100146688 /* DITranquillity */; };
+		227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356BD2685BD7200146688 /* CurrencyFormatService.swift */; };
+		22ACAB012685A63500E34A0B /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ACAB002685A63500E34A0B /* ShopViewModel.swift */; };
+		22ACAB0B2685ACB200E34A0B /* CoreTools in Frameworks */ = {isa = PBXBuildFile; productRef = 22ACAB0A2685ACB200E34A0B /* CoreTools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,10 @@
 		1362E983260506FB002F6892 /* CheckoutAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutAPI.m; sourceTree = "<group>"; };
 		13F839C9260DE503004ED3B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		13F839D1260DE578004ED3B3 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		227356B72685BAC200146688 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		227356BD2685BD7200146688 /* CurrencyFormatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatService.swift; sourceTree = "<group>"; };
+		22ACAB002685A63500E34A0B /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		22ACAB052685AC3300E34A0B /* CoreTools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreTools; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ACAB0B2685ACB200E34A0B /* CoreTools in Frameworks */,
+				227356BB2685BAF100146688 /* DITranquillity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +114,12 @@
 		134C0D202604A63700DF9484 = {
 			isa = PBXGroup;
 			children = (
+				22ACAB052685AC3300E34A0B /* CoreTools */,
 				134C0D2B2604A63700DF9484 /* Toast Delivery */,
 				134C0D422604A63800DF9484 /* Toast DeliveryTests */,
 				134C0D4D2604A63800DF9484 /* Toast DeliveryUITests */,
 				134C0D2A2604A63700DF9484 /* Products */,
+				22ACAB092685ACB200E34A0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +136,8 @@
 		134C0D2B2604A63700DF9484 /* Toast Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				227356BC2685BD6600146688 /* Currency */,
+				227356B62685BAB700146688 /* Environment */,
 				134C0D2C2604A63700DF9484 /* AppDelegate.swift */,
 				134C0D2E2604A63700DF9484 /* SceneDelegate.swift */,
 				1362E94D2604E9EE002F6892 /* Shop */,
@@ -188,6 +203,7 @@
 				1362E94F2604EA20002F6892 /* ShopViewController.swift */,
 				134C0D772604AB9000DF9484 /* List View */,
 				1362E95E2604EAD7002F6892 /* Cart */,
+				22ACAB002685A63500E34A0B /* ShopViewModel.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -221,6 +237,29 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		227356B62685BAB700146688 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				227356B72685BAC200146688 /* Environment.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		227356BC2685BD6600146688 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				227356BD2685BD7200146688 /* CurrencyFormatService.swift */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		22ACAB092685ACB200E34A0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +276,10 @@
 			dependencies = (
 			);
 			name = "Toast Delivery";
+			packageProductDependencies = (
+				22ACAB0A2685ACB200E34A0B /* CoreTools */,
+				227356BA2685BAF100146688 /* DITranquillity */,
+			);
 			productName = "Toast Delivery";
 			productReference = 134C0D292604A63700DF9484 /* Toast Delivery.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +352,9 @@
 				Base,
 			);
 			mainGroup = 134C0D202604A63700DF9484;
+			packageReferences = (
+				227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */,
+			);
 			productRefGroup = 134C0D2A2604A63700DF9484 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -357,10 +403,13 @@
 				13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */,
 				1362E9592604EAD3002F6892 /* CartViewController.swift in Sources */,
 				1362E9502604EA20002F6892 /* ShopViewController.swift in Sources */,
+				227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */,
+				227356B82685BAC200146688 /* Environment.swift in Sources */,
 				1362E97B2605053E002F6892 /* SumUpCheckoutService.m in Sources */,
 				134C0D792604ABA400DF9484 /* ToastListViewController.swift in Sources */,
 				134C0D6E2604A82E00DF9484 /* RoundedRectButton.swift in Sources */,
 				134C0D2D2604A63700DF9484 /* AppDelegate.swift in Sources */,
+				22ACAB012685A63500E34A0B /* ShopViewModel.swift in Sources */,
 				1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */,
 				134C0D972604B64900DF9484 /* ToastCell.swift in Sources */,
 				134C0D2F2604A63700DF9484 /* SceneDelegate.swift in Sources */,
@@ -695,6 +744,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		227356BA2685BAF100146688 /* DITranquillity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */;
+			productName = DITranquillity;
+		};
+		22ACAB0A2685ACB200E34A0B /* CoreTools */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreTools;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 134C0D212604A63700DF9484 /* Project object */;
 }

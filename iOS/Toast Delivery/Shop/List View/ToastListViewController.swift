@@ -40,12 +40,13 @@ class ToastListViewController: UICollectionViewController {
     }
 
     private func configureDataSource() {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = .autoupdatingCurrent
-
         let cellRegistration = UICollectionView.CellRegistration(cellNib: UINib(nibName: "ToastCell", bundle: nil)) { (cell: ToastCell, _, item: ToastItem) in
-            cell.configure(for: item, formatter: formatter)
+            cell.configure(
+                for: item,
+                price: env
+                    .currencyService
+                    .format(price: item.price)
+            )
         }
 
         let dataSource = UICollectionViewDiffableDataSource<Int, ToastItem>(collectionView: collectionView) {

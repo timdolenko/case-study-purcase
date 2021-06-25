@@ -68,7 +68,7 @@ class ShopViewController: UIViewController {
             .assign(to: \.selectedToast, on: self.viewModel)
             .store(in: &bindings)
         
-        listVC.viewModel = ToastListViewModel()
+        listVC.viewModel = viewModel
     }
     
     private func bindCartView() {

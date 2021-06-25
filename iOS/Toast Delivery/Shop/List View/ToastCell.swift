@@ -22,10 +22,10 @@ class ToastCell: UICollectionViewCell {
         imageView?.layer.cornerRadius = 8
     }
 
-    func configure(for item: ToastItem, formatter: NumberFormatter) {
+    func configure(for item: ToastItem, price: String) {
         imageView?.image = item.image
         nameLabel?.text = item.name
-        priceLabel?.text = formatter.string(from: item.price)
+        priceLabel?.text = price
     }
 
     override func prepareForReuse() {
