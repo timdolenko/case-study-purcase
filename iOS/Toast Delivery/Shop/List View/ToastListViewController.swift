@@ -7,6 +7,10 @@ import UIKit
 
 class ToastListViewController: UICollectionViewController {
 
+    var viewModel: ToastListViewModel!
+    
+    internal var didSelectToast: ((ToastItem) -> ())?
+    
     private let items: [ToastItem]
     private var dataSource: UICollectionViewDiffableDataSource<Int, ToastItem>?
 
@@ -75,4 +79,10 @@ class ToastListViewController: UICollectionViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.row < items.count else { return }
+        
+        let toast = items[indexPath.row]
+        viewModel.didSelectToast.send(toast)
+    }
 }
