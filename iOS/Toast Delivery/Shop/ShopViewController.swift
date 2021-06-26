@@ -12,6 +12,8 @@ class ShopViewController: UIViewController {
     var viewModel = ShopViewModel()
     weak var listVC: ToastListViewController!
     weak var cartVC: CartViewController!
+    
+    private var bindings = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,35 @@ class ShopViewController: UIViewController {
 
         listVC.didMove(toParent: self)
         cartVC.didMove(toParent: self)
+        
+        setupGoToCardDetails()
+    }
+    
+    
+    // Note: should be move to Coordinator
+    private func setupGoToCardDetails() {
+//        viewModel.goToCardDetails.sink { [unowned self] _ in
+//            let vc = CardViewController()
+//            vc.viewModel = viewModel.makeCardDetailsViewModel()
+//
+//            present(vc, animated: true, completion: nil)
+//        }
+//        .store(in: &bindings)
+        
+        viewModel
+            .goToCardDetails
+            .compactMap { [weak self] in self?.viewModel.selectedToast }
+            .flatMap {
+            env.checkoutService.checkout(toast: $0)
+                .catch { error -> AnyPublisher<CheckoutResponse, Never> in
+                    Empty(completeImmediately: true)
+                        .eraseToAnyPublisher()
+                }
+        }
+        .sink { v in
+            print(v)
+        }
+        .store(in: &bindings)
     }
     
     private func setupListView() {

@@ -8,8 +8,12 @@ class Environment {
     
     var currencyService: CurrencyFormatService { resolve() }
     var loginService: LoginService { resolve() }
+    var cardValidator: CardValidator { resolve() }
+    var checkoutService: ToastCheckoutService { resolve() }
     
     var secrets = Secrets.self
+    var translations = Translations()
+    var style = Style()
     
     func injectLive() {
         container
@@ -20,6 +24,16 @@ class Environment {
         container
             .register(LoginServiceLive.init)
             .as(LoginService.self)
+            .lifetime(.perContainer(.strong))
+        
+        container
+            .register(CardValidatorLive.init)
+            .as(CardValidator.self)
+            .lifetime(.perContainer(.strong))
+        
+        container
+            .register(ToastCheckoutServiceLive.init)
+            .as(ToastCheckoutService.self)
             .lifetime(.perContainer(.strong))
     }
 }

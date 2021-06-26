@@ -6,6 +6,7 @@
 import UIKit
 import Combine
 import CoreUI
+import CoreTools
 
 class CartViewController: UIViewController {
     
@@ -36,15 +37,25 @@ class CartViewController: UIViewController {
     }
     
     private func bind() {
-        viewModel
-            .$toastName
-            .assign(to: \.text, on: toastNameLabel)
-            .store(in: &bindings)
-        
-        viewModel
-            .$toastPrice
-            .assign(to: \.text, on: toastPriceLabel)
-            .store(in: &bindings)
+        bindings.collect {
+            viewModel
+                .$toastName
+                .assign(to: \.text, on: toastNameLabel)
+            
+            viewModel
+                .$toastPrice
+                .assign(to: \.text, on: toastPriceLabel)
+            
+            viewModel
+                .$toast
+                .map { $0 != nil }
+                .assign(to: \.isEnabled, on: purchaseButton)
+            
+            viewModel
+                .$toast
+                .map { $0 != nil ? 1.0 : 0.3 }
+                .assign(to: \.alpha, on: purchaseButton)
+        }
         
         purchaseButton
             .publisher(for: .touchUpInside)
