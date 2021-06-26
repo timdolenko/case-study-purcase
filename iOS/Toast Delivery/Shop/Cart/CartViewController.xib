@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartViewController" customModule="ToastDelivery" customModuleProvider="target">
             <connections>
+                <outlet property="purchaseButton" destination="Yzl-3K-5u5" id="Go1-a6-c6M"/>
                 <outlet property="toastNameLabel" destination="V0m-B8-5rn" id="iq6-Vo-gCd"/>
                 <outlet property="toastPriceLabel" destination="IAX-WV-T1B" id="lI8-Pz-c2N"/>
                 <outlet property="view" destination="DVl-wj-uha" id="1cu-o3-BOv"/>

@@ -5,26 +5,23 @@
 
 import UIKit
 import Combine
-
-fileprivate struct Placeholders {
-    var toastName: String = "<Selected Toast>"
-    var price: String = "<Price>"
-}
-
-fileprivate var placeholders = Placeholders()
+import CoreUI
 
 class CartViewController: UIViewController {
     
-    @Published var toast: ToastItem?
-    
-    private var bindings = Set<AnyCancellable>()
-
     @IBOutlet
     weak var toastNameLabel: UILabel!
     @IBOutlet
     weak var toastPriceLabel: UILabel!
+    @IBOutlet
+    weak var purchaseButton: UIButton!
+    
+    let viewModel: CartViewModel
+    
+    private var bindings = Set<AnyCancellable>()
 
-    init() {
+    init(viewModel: CartViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: "CartViewController", bundle: nil)
     }
 
@@ -39,21 +36,19 @@ class CartViewController: UIViewController {
     }
     
     private func bind() {
-        let toast = $toast
-            .share()
-            
-        toast
-            .map { $0?.name ?? placeholders.toastName }
+        viewModel
+            .$toastName
             .assign(to: \.text, on: toastNameLabel)
             .store(in: &bindings)
         
-        toast
-            .map {
-                guard let toast = $0 else { return placeholders.price }
-                
-                return env.currencyService.format(price: toast.price)
-            }
+        viewModel
+            .$toastPrice
             .assign(to: \.text, on: toastPriceLabel)
             .store(in: &bindings)
+        
+        purchaseButton
+            .publisher(for: .touchUpInside)
+            .map { _ in () }
+            .receive(subscriber: AnySubscriber(viewModel.didTapPurchase))
     }
 }

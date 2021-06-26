@@ -7,24 +7,12 @@ import UIKit
 
 class ToastListViewController: UICollectionViewController {
 
-    var viewModel: ToastListViewModel!
+    let viewModel: ToastListViewModel
     
-    internal var didSelectToast: ((ToastItem) -> ())?
-    
-    private let items: [ToastItem]
     private var dataSource: UICollectionViewDiffableDataSource<Int, ToastItem>?
 
-    convenience init?(contentsOfURL url: URL) {
-        guard let data = try? Data(contentsOf: url),
-              let items = try? JSONDecoder().decode([ToastItem].self, from: data) else {
-            return nil
-        }
-
-        self.init(items: items)
-    }
-
-    init(items: [ToastItem]) {
-        self.items = items
+    init(viewModel: ToastListViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: ToastListViewController.createLayout())
         configureDataSource()
     }
@@ -56,7 +44,7 @@ class ToastListViewController: UICollectionViewController {
 
         var snapshot = NSDiffableDataSourceSnapshot<Int, ToastItem>()
         snapshot.appendSections([0])
-        snapshot.appendItems(items)
+        snapshot.appendItems(viewModel.items)
         dataSource.apply(snapshot, animatingDifferences: false)
 
         self.dataSource = dataSource
@@ -81,9 +69,6 @@ class ToastListViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.row < items.count else { return }
-        
-        let toast = items[indexPath.row]
-        viewModel.didSelectToast.send(toast)
+        viewModel.didSelectItemAtIndex.send(indexPath.row)
     }
 }

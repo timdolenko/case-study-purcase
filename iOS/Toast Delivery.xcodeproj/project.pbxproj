@@ -27,6 +27,11 @@
 		13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839C9260DE503004ED3B3 /* LoginController.swift */; };
 		13F839D2260DE578004ED3B3 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839D1260DE578004ED3B3 /* TokenResponse.swift */; };
 		226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7F40C26872A2100D52545 /* Secrets.swift */; };
+		226A72012687399400AE6CA8 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 226A72002687399400AE6CA8 /* CoreUI */; };
+		226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720226873E9900AE6CA8 /* CartViewModel.swift */; };
+		226A720526873EC600AE6CA8 /* ToastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720426873EC600AE6CA8 /* ToastListViewModel.swift */; };
+		226A72072687439200AE6CA8 /* ToastItems+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72062687439200AE6CA8 /* ToastItems+Stub.swift */; };
+		226A72092687460D00AE6CA8 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72082687460D00AE6CA8 /* LoginService.swift */; };
 		227356B82685BAC200146688 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356B72685BAC200146688 /* Environment.swift */; };
 		227356BB2685BAF100146688 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = 227356BA2685BAF100146688 /* DITranquillity */; };
 		227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356BD2685BD7200146688 /* CurrencyFormatService.swift */; };
@@ -79,6 +84,10 @@
 		1362E983260506FB002F6892 /* CheckoutAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutAPI.m; sourceTree = "<group>"; };
 		13F839C9260DE503004ED3B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		13F839D1260DE578004ED3B3 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		226A720226873E9900AE6CA8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		226A720426873EC600AE6CA8 /* ToastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastListViewModel.swift; sourceTree = "<group>"; };
+		226A72062687439200AE6CA8 /* ToastItems+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastItems+Stub.swift"; sourceTree = "<group>"; };
+		226A72082687460D00AE6CA8 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		227356B72685BAC200146688 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		227356BD2685BD7200146688 /* CurrencyFormatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatService.swift; sourceTree = "<group>"; };
 		22ACAB002685A63500E34A0B /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 			files = (
 				22ACAB0B2685ACB200E34A0B /* CoreTools in Frameworks */,
 				227356BB2685BAF100146688 /* DITranquillity in Frameworks */,
+				226A72012687399400AE6CA8 /* CoreUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +196,7 @@
 				134C0D782604ABA400DF9484 /* ToastListViewController.swift */,
 				134C0D952604B64900DF9484 /* ToastCell.swift */,
 				134C0D962604B64900DF9484 /* ToastCell.xib */,
+				226A720426873EC600AE6CA8 /* ToastListViewModel.swift */,
 			);
 			path = "List View";
 			sourceTree = "<group>";
@@ -207,6 +218,7 @@
 				134C0D772604AB9000DF9484 /* List View */,
 				1362E95E2604EAD7002F6892 /* Cart */,
 				22ACAB002685A63500E34A0B /* ShopViewModel.swift */,
+				226A72062687439200AE6CA8 /* ToastItems+Stub.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -216,6 +228,7 @@
 			children = (
 				1362E9572604EAD3002F6892 /* CartViewController.swift */,
 				1362E9582604EAD3002F6892 /* CartViewController.xib */,
+				226A720226873E9900AE6CA8 /* CartViewModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -236,6 +249,7 @@
 			children = (
 				13F839C9260DE503004ED3B3 /* LoginController.swift */,
 				13F839D1260DE578004ED3B3 /* TokenResponse.swift */,
+				226A72082687460D00AE6CA8 /* LoginService.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -283,6 +297,7 @@
 			packageProductDependencies = (
 				22ACAB0A2685ACB200E34A0B /* CoreTools */,
 				227356BA2685BAF100146688 /* DITranquillity */,
+				226A72002687399400AE6CA8 /* CoreUI */,
 			);
 			productName = "Toast Delivery";
 			productReference = 134C0D292604A63700DF9484 /* Toast Delivery.app */;
@@ -427,15 +442,19 @@
 			files = (
 				13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */,
 				226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */,
+				226A72072687439200AE6CA8 /* ToastItems+Stub.swift in Sources */,
 				1362E9592604EAD3002F6892 /* CartViewController.swift in Sources */,
 				1362E9502604EA20002F6892 /* ShopViewController.swift in Sources */,
 				227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */,
 				227356B82685BAC200146688 /* Environment.swift in Sources */,
+				226A72092687460D00AE6CA8 /* LoginService.swift in Sources */,
+				226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */,
 				1362E97B2605053E002F6892 /* SumUpCheckoutService.m in Sources */,
 				134C0D792604ABA400DF9484 /* ToastListViewController.swift in Sources */,
 				134C0D6E2604A82E00DF9484 /* RoundedRectButton.swift in Sources */,
 				134C0D2D2604A63700DF9484 /* AppDelegate.swift in Sources */,
 				22ACAB012685A63500E34A0B /* ShopViewModel.swift in Sources */,
+				226A720526873EC600AE6CA8 /* ToastListViewModel.swift in Sources */,
 				1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */,
 				134C0D972604B64900DF9484 /* ToastCell.swift in Sources */,
 				134C0D2F2604A63700DF9484 /* SceneDelegate.swift in Sources */,
@@ -783,6 +802,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		226A72002687399400AE6CA8 /* CoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreUI;
+		};
 		227356BA2685BAF100146688 /* DITranquillity */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */;
