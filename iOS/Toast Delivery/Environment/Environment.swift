@@ -10,6 +10,8 @@ class Environment {
         container.resolve()
     }
     
+    var secrets = Secrets.self
+    
     func injectLive() {
         container
             .register(CurrencyFormatServiceLive.init)

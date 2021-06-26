@@ -26,6 +26,7 @@
 		1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E983260506FB002F6892 /* CheckoutAPI.m */; };
 		13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839C9260DE503004ED3B3 /* LoginController.swift */; };
 		13F839D2260DE578004ED3B3 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839D1260DE578004ED3B3 /* TokenResponse.swift */; };
+		226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7F40C26872A2100D52545 /* Secrets.swift */; };
 		227356B82685BAC200146688 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356B72685BAC200146688 /* Environment.swift */; };
 		227356BB2685BAF100146688 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = 227356BA2685BAF100146688 /* DITranquillity */; };
 		227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356BD2685BD7200146688 /* CurrencyFormatService.swift */; };
@@ -82,6 +83,7 @@
 		227356BD2685BD7200146688 /* CurrencyFormatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatService.swift; sourceTree = "<group>"; };
 		22ACAB002685A63500E34A0B /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		22ACAB052685AC3300E34A0B /* CoreTools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreTools; sourceTree = "<group>"; };
+		22F7F40C26872A2100D52545 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		134C0D202604A63700DF9484 = {
 			isa = PBXGroup;
 			children = (
+				22F7F40C26872A2100D52545 /* Secrets.swift */,
 				22ACAB052685AC3300E34A0B /* CoreTools */,
 				134C0D2B2604A63700DF9484 /* Toast Delivery */,
 				134C0D422604A63800DF9484 /* Toast DeliveryTests */,
@@ -267,6 +270,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 134C0D532604A63800DF9484 /* Build configuration list for PBXNativeTarget "Toast Delivery" */;
 			buildPhases = (
+				22AAD6EC26871DAB006BD62F /* Process GYB */,
 				134C0D252604A63700DF9484 /* Sources */,
 				134C0D262604A63700DF9484 /* Frameworks */,
 				134C0D272604A63700DF9484 /* Resources */,
@@ -395,12 +399,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22AAD6EC26871DAB006BD62F /* Process GYB */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Process GYB";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -name '*.gyb' |\n    while read file; do\n        /usr/local/bin/gyb --line-directive '' -o \"${file%.gyb}\" \"$file\";\n    done\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		134C0D252604A63700DF9484 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */,
+				226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */,
 				1362E9592604EAD3002F6892 /* CartViewController.swift in Sources */,
 				1362E9502604EA20002F6892 /* ShopViewController.swift in Sources */,
 				227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */,
