@@ -5,19 +5,16 @@
 
 import Combine
 
-fileprivate struct Placeholders {
-    var toastName: String = "<Selected Toast>"
-    var price: String = "<Price>"
+fileprivate var translations: Translations.Cart {
+    env.translations.cart
 }
-
-fileprivate var placeholders = Placeholders()
 
 class CartViewModel {
     @Published var toast: ToastItem?
     var didTapPurchase = PassthroughSubject<Void, Never>()
     
-    @Published var toastName: String? = placeholders.toastName
-    @Published var toastPrice: String? = placeholders.price
+    @Published var toastName: String? = translations.toastName
+    @Published var toastPrice: String? = translations.price
     
     init() {
         bind()
@@ -28,12 +25,12 @@ class CartViewModel {
             .share()
             
         toast
-            .map { $0?.name ?? placeholders.toastName }
+            .map { $0?.name ?? translations.toastName }
             .assign(to: &$toastName)
         
         toast
             .map {
-                guard let toast = $0 else { return placeholders.price }
+                guard let toast = $0 else { return translations.price }
 
                 return env.currencyService.format(price: toast.price)
             }
