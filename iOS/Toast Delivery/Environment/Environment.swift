@@ -35,6 +35,13 @@ class Environment {
             .register(ToastCheckoutServiceLive.init)
             .as(ToastCheckoutService.self)
             .lifetime(.perContainer(.strong))
+        
+        injectLiveNetworking()
+        
+        container
+            .register(CheckoutRepositoryLive.init)
+            .as(CheckoutRepository.self)
+            .lifetime(.perContainer(.strong))
     }
 }
 

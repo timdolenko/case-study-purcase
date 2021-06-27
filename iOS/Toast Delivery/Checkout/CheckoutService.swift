@@ -7,23 +7,37 @@ import Foundation
 import Combine
 
 protocol ToastCheckoutService {
-    func checkout(toast: ToastItem) -> AnyPublisher<CheckoutResponse, Error>
+    func createCheckout(toast: ToastItem) -> AnyPublisher<CheckoutResponse, Error>
+    func processCheckout(with card: Card, checkout: CheckoutResponse) -> AnyPublisher<PaymentResult, Error>
 }
 
 class ToastCheckoutServiceLive: ToastCheckoutService {
     
-    func checkout(toast: ToastItem) -> AnyPublisher<CheckoutResponse, Error> {
+    var checkoutRepository: CheckoutRepository {
+        env.resolve()
+    }
+    
+    func createCheckout(toast: ToastItem) -> AnyPublisher<CheckoutResponse, Error> {
        env.loginService.retrieveAccessToken()
             .flatMap { [unowned self] accessToken in
                 createCheckout(accessToken: accessToken, toast: toast)
-                    .eraseToAnyPublisher()
-            }.eraseToAnyPublisher()
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func processCheckout(with card: Card, checkout: CheckoutResponse) -> AnyPublisher<PaymentResult, Error> {
+        checkoutRepository
+            .processCheckout(checkoutId: checkout.identifier, card: card)
+            .eraseToAnyPublisher()
     }
     
     private func createCheckout(accessToken: String, toast: ToastItem) -> Future<CheckoutResponse, Error> {
         Future() { promise in
             
-            let service = SumUpCheckoutService(merchantCode: Secrets.id, accessToken: accessToken)
+            let service = SumUpCheckoutService(
+                merchantCode: env.secrets.merchantCode,
+                accessToken: accessToken
+            )
             
             let reference = UUID().uuidString
             
@@ -42,8 +56,4 @@ class ToastCheckoutServiceLive: ToastCheckoutService {
             }
         }
     }
-}
-
-extension SumUpCheckoutService {
-    
 }

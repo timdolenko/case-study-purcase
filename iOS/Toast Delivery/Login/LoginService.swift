@@ -24,8 +24,8 @@ class LoginServiceLive: LoginService {
     private var token: Token? = nil
     
     private lazy var loginController = LoginController(
-        clientId: Secrets.clientId,
-        clientSecret: Secrets.clientSecret
+        clientId: env.secrets.clientId,
+        clientSecret: env.secrets.clientSecret
     )
     
     func retrieveAccessToken() -> AnyPublisher<String, Error> {
