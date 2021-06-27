@@ -20,9 +20,6 @@ let package = Package(
         .target(
             name: "CoreTools",
             dependencies: []),
-        .testTarget(
-            name: "CoreToolsTests",
-            dependencies: ["CoreTools"]),
         
         .target(
             name: "CoreUI",
