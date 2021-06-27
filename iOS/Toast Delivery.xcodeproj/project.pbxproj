@@ -31,6 +31,7 @@
 		223EA1A62688D98C00B1E136 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A52688D98C00B1E136 /* Card.swift */; };
 		223EA1A82688E58D00B1E136 /* PaymentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A72688E58D00B1E136 /* PaymentResult.swift */; };
 		223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */; };
+		223EA1AF2688FF4900B1E136 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1AE2688FF4900B1E136 /* Mocks.swift */; };
 		226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7F40C26872A2100D52545 /* Secrets.swift */; };
 		226A72012687399400AE6CA8 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 226A72002687399400AE6CA8 /* CoreUI */; };
 		226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720226873E9900AE6CA8 /* CartViewModel.swift */; };
@@ -104,6 +105,7 @@
 		223EA1A52688D98C00B1E136 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		223EA1A72688E58D00B1E136 /* PaymentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResult.swift; sourceTree = "<group>"; };
 		223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModelTest.swift; sourceTree = "<group>"; };
+		223EA1AE2688FF4900B1E136 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		226A720226873E9900AE6CA8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		226A720426873EC600AE6CA8 /* ToastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastListViewModel.swift; sourceTree = "<group>"; };
 		226A72062687439200AE6CA8 /* ToastItems+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastItems+Stub.swift"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				134C0D452604A63800DF9484 /* Info.plist */,
 				223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */,
+				223EA1AE2688FF4900B1E136 /* Mocks.swift */,
 			);
 			path = "Toast DeliveryTests";
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */,
+				223EA1AF2688FF4900B1E136 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

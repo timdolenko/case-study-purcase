@@ -54,17 +54,8 @@ class CardDetailsViewModelTest: XCTestCase {
     }
     
     func test_whenDidTapDoneWithCardAndCheckoutAndSuccess_shouldReturnSuccessResult() {
-        sut.validatedCard = Card(number: "4242424242424242", expiryYear: "25", expiryMonth: "12", cvv: "569", ownersName: "Bob Smith", zipCode: "13510")
-        sut.checkout.send(
-            CheckoutResponse(
-                reference: "",
-                amount: 2.99,
-                currencyCode: "EUR",
-                identifier: "id",
-                status: "failed",
-                date: Date()
-            )
-        )
+        sut.validatedCard = .stub
+        sut.checkout.send(.stub)
         
         let receivedResult = expectation(description: "result received")
         
