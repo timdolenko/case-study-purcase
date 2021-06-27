@@ -1,5 +1,7 @@
 # SumUp Mobile Coding Challenge
 
+See [pull request](https://github.com/timdolenko/interviewCaseStudy-sumUp/pull/1) for the result
+
 The purpose of this assignment is to evaluate your coding performance and to understand your attitude towards software development.
 
 ## The task
