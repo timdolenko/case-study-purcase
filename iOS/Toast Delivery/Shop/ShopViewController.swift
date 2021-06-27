@@ -4,23 +4,63 @@
 //
 
 import UIKit
+import Combine
 
 // TODO: create a checkout with shopping cart item
 class ShopViewController: UIViewController {
+    
+    var viewModel = ShopViewModel()
+    weak var listVC: ToastListViewController!
+    weak var cartVC: CartViewController!
+    
+    private var bindings = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let listVC = createToastList()!
-        listVC.view.translatesAutoresizingMaskIntoConstraints = false
-        addChild(listVC)
-        view.addSubview(listVC.view)
+        setupListView()
+        setupCartView()
+        setupConstraints()
 
-        let cartVC = CartViewController()
-        cartVC.view.translatesAutoresizingMaskIntoConstraints = false
-        addChild(cartVC)
-        view.addSubview(cartVC.view)
+        listVC.didMove(toParent: self)
+        cartVC.didMove(toParent: self)
+        
+        setupGoToCardDetails()
+    }
+    
+    
+    // Note: should be move to Coordinator
+    private func setupGoToCardDetails() {
+        viewModel.goToCardDetails.sink { [unowned self] _ in
+            guard let vm = viewModel.makeCardDetailsViewModel() else { return }
+            let vc = CardViewController()
+            vc.viewModel = vm
 
+            present(vc, animated: true, completion: nil)
+        }
+        .store(in: &bindings)
+    }
+    
+    private func setupListView() {
+        listVC = addChildWithView(
+            ToastListViewController(viewModel: viewModel.toastListViewModel)
+        )
+    }
+    
+    private func setupCartView() {
+        cartVC = addChildWithView(
+            CartViewController(viewModel: viewModel.cartViewModel)
+        )
+    }
+    
+    private func addChildWithView<VC: UIViewController>(_ vc: VC) -> VC {
+        vc.view.translatesAutoresizingMaskIntoConstraints = false
+        addChild(vc)
+        view.addSubview(vc.view)
+        return vc
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             listVC.view.topAnchor.constraint(equalTo: view.topAnchor),
             listVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -31,17 +71,5 @@ class ShopViewController: UIViewController {
             cartVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             cartVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-
-        listVC.didMove(toParent: self)
-        cartVC.didMove(toParent: self)
     }
-
-    private func createToastList() -> ToastListViewController? {
-        guard let url = Bundle.main.url(forResource: "toasts", withExtension: "json") else {
-            return nil
-        }
-
-        return ToastListViewController(contentsOfURL: url)
-    }
-
 }

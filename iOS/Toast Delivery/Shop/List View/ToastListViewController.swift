@@ -7,20 +7,12 @@ import UIKit
 
 class ToastListViewController: UICollectionViewController {
 
-    private let items: [ToastItem]
+    let viewModel: ToastListViewModel
+    
     private var dataSource: UICollectionViewDiffableDataSource<Int, ToastItem>?
 
-    convenience init?(contentsOfURL url: URL) {
-        guard let data = try? Data(contentsOf: url),
-              let items = try? JSONDecoder().decode([ToastItem].self, from: data) else {
-            return nil
-        }
-
-        self.init(items: items)
-    }
-
-    init(items: [ToastItem]) {
-        self.items = items
+    init(viewModel: ToastListViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: ToastListViewController.createLayout())
         configureDataSource()
     }
@@ -36,12 +28,13 @@ class ToastListViewController: UICollectionViewController {
     }
 
     private func configureDataSource() {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.locale = .autoupdatingCurrent
-
         let cellRegistration = UICollectionView.CellRegistration(cellNib: UINib(nibName: "ToastCell", bundle: nil)) { (cell: ToastCell, _, item: ToastItem) in
-            cell.configure(for: item, formatter: formatter)
+            cell.configure(
+                for: item,
+                price: env
+                    .currencyService
+                    .format(price: item.price)
+            )
         }
 
         let dataSource = UICollectionViewDiffableDataSource<Int, ToastItem>(collectionView: collectionView) {
@@ -51,7 +44,7 @@ class ToastListViewController: UICollectionViewController {
 
         var snapshot = NSDiffableDataSourceSnapshot<Int, ToastItem>()
         snapshot.appendSections([0])
-        snapshot.appendItems(items)
+        snapshot.appendItems(viewModel.items)
         dataSource.apply(snapshot, animatingDifferences: false)
 
         self.dataSource = dataSource
@@ -75,4 +68,7 @@ class ToastListViewController: UICollectionViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemAtIndex.send(indexPath.row)
+    }
 }

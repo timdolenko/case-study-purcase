@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		134C0D2F2604A63700DF9484 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D2E2604A63700DF9484 /* SceneDelegate.swift */; };
 		134C0D362604A63800DF9484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134C0D352604A63800DF9484 /* Assets.xcassets */; };
 		134C0D392604A63800DF9484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134C0D372604A63800DF9484 /* LaunchScreen.storyboard */; };
-		134C0D442604A63800DF9484 /* ToastDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */; };
 		134C0D4F2604A63800DF9484 /* ToastDeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D4E2604A63800DF9484 /* ToastDeliveryUITests.swift */; };
 		134C0D6E2604A82E00DF9484 /* RoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D6D2604A82E00DF9484 /* RoundedRectButton.swift */; };
 		134C0D792604ABA400DF9484 /* ToastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D782604ABA400DF9484 /* ToastListViewController.swift */; };
@@ -26,6 +25,36 @@
 		1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1362E983260506FB002F6892 /* CheckoutAPI.m */; };
 		13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839C9260DE503004ED3B3 /* LoginController.swift */; };
 		13F839D2260DE578004ED3B3 /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F839D1260DE578004ED3B3 /* TokenResponse.swift */; };
+		223EA19F2688D73300B1E136 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 223EA19E2688D73300B1E136 /* Networking */; };
+		223EA1A12688D74800B1E136 /* CheckoutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A02688D74800B1E136 /* CheckoutRepository.swift */; };
+		223EA1A32688D88300B1E136 /* Environment+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A22688D88300B1E136 /* Environment+Networking.swift */; };
+		223EA1A62688D98C00B1E136 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A52688D98C00B1E136 /* Card.swift */; };
+		223EA1A82688E58D00B1E136 /* PaymentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A72688E58D00B1E136 /* PaymentResult.swift */; };
+		223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */; };
+		223EA1AF2688FF4900B1E136 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1AE2688FF4900B1E136 /* Mocks.swift */; };
+		223EA1B12689010500B1E136 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1B02689010500B1E136 /* Assembly.swift */; };
+		226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7F40C26872A2100D52545 /* Secrets.swift */; };
+		226A72012687399400AE6CA8 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 226A72002687399400AE6CA8 /* CoreUI */; };
+		226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720226873E9900AE6CA8 /* CartViewModel.swift */; };
+		226A720526873EC600AE6CA8 /* ToastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720426873EC600AE6CA8 /* ToastListViewModel.swift */; };
+		226A72072687439200AE6CA8 /* ToastItems+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72062687439200AE6CA8 /* ToastItems+Stub.swift */; };
+		226A72092687460D00AE6CA8 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72082687460D00AE6CA8 /* LoginService.swift */; };
+		226A72122687676100AE6CA8 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72112687676100AE6CA8 /* CardViewController.swift */; };
+		226A7215268767B600AE6CA8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 226A7214268767B600AE6CA8 /* SnapKit */; };
+		226A7218268767DB00AE6CA8 /* CardDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A7217268767DB00AE6CA8 /* CardDetailsCell.swift */; };
+		226A721C26876BAB00AE6CA8 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A721B26876BAB00AE6CA8 /* Translations.swift */; };
+		226A72212687808300AE6CA8 /* Typist in Frameworks */ = {isa = PBXBuildFile; productRef = 226A72202687808300AE6CA8 /* Typist */; };
+		226A7223268782E000AE6CA8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A7222268782E000AE6CA8 /* Style.swift */; };
+		226A72252687839B00AE6CA8 /* CardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72242687839B00AE6CA8 /* CardDetailsViewModel.swift */; };
+		226A722726878B2400AE6CA8 /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A722626878B2400AE6CA8 /* CardValidator.swift */; };
+		226A72292687956100AE6CA8 /* CheckoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72282687956100AE6CA8 /* CheckoutService.swift */; };
+		226A72352688D0D200AE6CA8 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72342688D0D200AE6CA8 /* Endpoints.swift */; };
+		226A72372688D4D300AE6CA8 /* ProcessCheckoutRequestDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A72362688D4D300AE6CA8 /* ProcessCheckoutRequestDTOs.swift */; };
+		227356B82685BAC200146688 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356B72685BAC200146688 /* Environment.swift */; };
+		227356BB2685BAF100146688 /* DITranquillity in Frameworks */ = {isa = PBXBuildFile; productRef = 227356BA2685BAF100146688 /* DITranquillity */; };
+		227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227356BD2685BD7200146688 /* CurrencyFormatService.swift */; };
+		22ACAB012685A63500E34A0B /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ACAB002685A63500E34A0B /* ShopViewModel.swift */; };
+		22ACAB0B2685ACB200E34A0B /* CoreTools in Frameworks */ = {isa = PBXBuildFile; productRef = 22ACAB0A2685ACB200E34A0B /* CoreTools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +82,6 @@
 		134C0D382604A63800DF9484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		134C0D3A2604A63800DF9484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134C0D3F2604A63800DF9484 /* Toast DeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast DeliveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDeliveryTests.swift; sourceTree = "<group>"; };
 		134C0D452604A63800DF9484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134C0D4A2604A63800DF9484 /* Toast DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast DeliveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		134C0D4E2604A63800DF9484 /* ToastDeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDeliveryUITests.swift; sourceTree = "<group>"; };
@@ -73,6 +101,32 @@
 		1362E983260506FB002F6892 /* CheckoutAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckoutAPI.m; sourceTree = "<group>"; };
 		13F839C9260DE503004ED3B3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		13F839D1260DE578004ED3B3 /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
+		223EA1A02688D74800B1E136 /* CheckoutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutRepository.swift; sourceTree = "<group>"; };
+		223EA1A22688D88300B1E136 /* Environment+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Networking.swift"; sourceTree = "<group>"; };
+		223EA1A52688D98C00B1E136 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		223EA1A72688E58D00B1E136 /* PaymentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResult.swift; sourceTree = "<group>"; };
+		223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModelTest.swift; sourceTree = "<group>"; };
+		223EA1AE2688FF4900B1E136 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		223EA1B02689010500B1E136 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		226A720226873E9900AE6CA8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		226A720426873EC600AE6CA8 /* ToastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastListViewModel.swift; sourceTree = "<group>"; };
+		226A72062687439200AE6CA8 /* ToastItems+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastItems+Stub.swift"; sourceTree = "<group>"; };
+		226A72082687460D00AE6CA8 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		226A72112687676100AE6CA8 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		226A7217268767DB00AE6CA8 /* CardDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsCell.swift; sourceTree = "<group>"; };
+		226A721B26876BAB00AE6CA8 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
+		226A7222268782E000AE6CA8 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		226A72242687839B00AE6CA8 /* CardDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModel.swift; sourceTree = "<group>"; };
+		226A722626878B2400AE6CA8 /* CardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
+		226A72282687956100AE6CA8 /* CheckoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutService.swift; sourceTree = "<group>"; };
+		226A722D268796A300AE6CA8 /* BridgingHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		226A72342688D0D200AE6CA8 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		226A72362688D4D300AE6CA8 /* ProcessCheckoutRequestDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessCheckoutRequestDTOs.swift; sourceTree = "<group>"; };
+		227356B72685BAC200146688 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		227356BD2685BD7200146688 /* CurrencyFormatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatService.swift; sourceTree = "<group>"; };
+		22ACAB002685A63500E34A0B /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		22ACAB052685AC3300E34A0B /* CoreTools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CoreTools; sourceTree = "<group>"; };
+		22F7F40C26872A2100D52545 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +134,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223EA19F2688D73300B1E136 /* Networking in Frameworks */,
+				226A72212687808300AE6CA8 /* Typist in Frameworks */,
+				22ACAB0B2685ACB200E34A0B /* CoreTools in Frameworks */,
+				226A7215268767B600AE6CA8 /* SnapKit in Frameworks */,
+				227356BB2685BAF100146688 /* DITranquillity in Frameworks */,
+				226A72012687399400AE6CA8 /* CoreUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +163,13 @@
 		134C0D202604A63700DF9484 = {
 			isa = PBXGroup;
 			children = (
+				22F7F40C26872A2100D52545 /* Secrets.swift */,
+				22ACAB052685AC3300E34A0B /* CoreTools */,
 				134C0D2B2604A63700DF9484 /* Toast Delivery */,
 				134C0D422604A63800DF9484 /* Toast DeliveryTests */,
 				134C0D4D2604A63800DF9484 /* Toast DeliveryUITests */,
 				134C0D2A2604A63700DF9484 /* Products */,
+				22ACAB092685ACB200E34A0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +186,10 @@
 		134C0D2B2604A63700DF9484 /* Toast Delivery */ = {
 			isa = PBXGroup;
 			children = (
+				223EA1A42688D98500B1E136 /* Domain */,
+				226A722D268796A300AE6CA8 /* BridgingHeader.h */,
+				227356BC2685BD6600146688 /* Currency */,
+				227356B62685BAB700146688 /* Environment */,
 				134C0D2C2604A63700DF9484 /* AppDelegate.swift */,
 				134C0D2E2604A63700DF9484 /* SceneDelegate.swift */,
 				1362E94D2604E9EE002F6892 /* Shop */,
@@ -139,8 +206,9 @@
 		134C0D422604A63800DF9484 /* Toast DeliveryTests */ = {
 			isa = PBXGroup;
 			children = (
-				134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */,
 				134C0D452604A63800DF9484 /* Info.plist */,
+				223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */,
+				223EA1AE2688FF4900B1E136 /* Mocks.swift */,
 			);
 			path = "Toast DeliveryTests";
 			sourceTree = "<group>";
@@ -168,6 +236,7 @@
 				134C0D782604ABA400DF9484 /* ToastListViewController.swift */,
 				134C0D952604B64900DF9484 /* ToastCell.swift */,
 				134C0D962604B64900DF9484 /* ToastCell.xib */,
+				226A720426873EC600AE6CA8 /* ToastListViewModel.swift */,
 			);
 			path = "List View";
 			sourceTree = "<group>";
@@ -184,10 +253,13 @@
 		1362E94D2604E9EE002F6892 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				134C0D812604AFD800DF9484 /* ToastItem.swift */,
-				1362E94F2604EA20002F6892 /* ShopViewController.swift */,
-				134C0D772604AB9000DF9484 /* List View */,
 				1362E95E2604EAD7002F6892 /* Cart */,
+				226A72102687674B00AE6CA8 /* Card */,
+				134C0D772604AB9000DF9484 /* List View */,
+				1362E94F2604EA20002F6892 /* ShopViewController.swift */,
+				22ACAB002685A63500E34A0B /* ShopViewModel.swift */,
+				134C0D812604AFD800DF9484 /* ToastItem.swift */,
+				226A72062687439200AE6CA8 /* ToastItems+Stub.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -197,6 +269,7 @@
 			children = (
 				1362E9572604EAD3002F6892 /* CartViewController.swift */,
 				1362E9582604EAD3002F6892 /* CartViewController.xib */,
+				226A720226873E9900AE6CA8 /* CartViewModel.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -204,10 +277,12 @@
 		1362E968260504BA002F6892 /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				226A72332688D05900AE6CA8 /* NewCheckout */,
 				1362E9822605056B002F6892 /* CheckoutAPI.h */,
 				1362E983260506FB002F6892 /* CheckoutAPI.m */,
 				1362E9792605053E002F6892 /* SumUpCheckoutService.h */,
 				1362E97A2605053E002F6892 /* SumUpCheckoutService.m */,
+				226A72282687956100AE6CA8 /* CheckoutService.swift */,
 			);
 			path = Checkout;
 			sourceTree = "<group>";
@@ -217,8 +292,74 @@
 			children = (
 				13F839C9260DE503004ED3B3 /* LoginController.swift */,
 				13F839D1260DE578004ED3B3 /* TokenResponse.swift */,
+				226A72082687460D00AE6CA8 /* LoginService.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		223EA1A42688D98500B1E136 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				223EA1A52688D98C00B1E136 /* Card.swift */,
+				223EA1A72688E58D00B1E136 /* PaymentResult.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		226A72102687674B00AE6CA8 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				226A7216268767C300AE6CA8 /* TableView */,
+				226A72112687676100AE6CA8 /* CardViewController.swift */,
+				226A72242687839B00AE6CA8 /* CardDetailsViewModel.swift */,
+				226A722626878B2400AE6CA8 /* CardValidator.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		226A7216268767C300AE6CA8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				226A7217268767DB00AE6CA8 /* CardDetailsCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		226A72332688D05900AE6CA8 /* NewCheckout */ = {
+			isa = PBXGroup;
+			children = (
+				226A72342688D0D200AE6CA8 /* Endpoints.swift */,
+				226A72362688D4D300AE6CA8 /* ProcessCheckoutRequestDTOs.swift */,
+				223EA1A02688D74800B1E136 /* CheckoutRepository.swift */,
+				223EA1A22688D88300B1E136 /* Environment+Networking.swift */,
+			);
+			path = NewCheckout;
+			sourceTree = "<group>";
+		};
+		227356B62685BAB700146688 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				227356B72685BAC200146688 /* Environment.swift */,
+				226A721B26876BAB00AE6CA8 /* Translations.swift */,
+				226A7222268782E000AE6CA8 /* Style.swift */,
+				223EA1B02689010500B1E136 /* Assembly.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		227356BC2685BD6600146688 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				227356BD2685BD7200146688 /* CurrencyFormatService.swift */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		22ACAB092685ACB200E34A0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +369,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 134C0D532604A63800DF9484 /* Build configuration list for PBXNativeTarget "Toast Delivery" */;
 			buildPhases = (
+				22AAD6EC26871DAB006BD62F /* Process GYB */,
 				134C0D252604A63700DF9484 /* Sources */,
 				134C0D262604A63700DF9484 /* Frameworks */,
 				134C0D272604A63700DF9484 /* Resources */,
@@ -237,6 +379,14 @@
 			dependencies = (
 			);
 			name = "Toast Delivery";
+			packageProductDependencies = (
+				22ACAB0A2685ACB200E34A0B /* CoreTools */,
+				227356BA2685BAF100146688 /* DITranquillity */,
+				226A72002687399400AE6CA8 /* CoreUI */,
+				226A7214268767B600AE6CA8 /* SnapKit */,
+				226A72202687808300AE6CA8 /* Typist */,
+				223EA19E2688D73300B1E136 /* Networking */,
+			);
 			productName = "Toast Delivery";
 			productReference = 134C0D292604A63700DF9484 /* Toast Delivery.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +459,12 @@
 				Base,
 			);
 			mainGroup = 134C0D202604A63700DF9484;
+			packageReferences = (
+				227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */,
+				226A7213268767B600AE6CA8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				226A721F2687808300AE6CA8 /* XCRemoteSwiftPackageReference "Typist" */,
+				223EA19D2688D73300B1E136 /* XCRemoteSwiftPackageReference "networking" */,
+			);
 			productRefGroup = 134C0D2A2604A63700DF9484 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -349,23 +505,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22AAD6EC26871DAB006BD62F /* Process GYB */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Process GYB";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "find . -name '*.gyb' |\n    while read file; do\n        /usr/local/bin/gyb --line-directive '' -o \"${file%.gyb}\" \"$file\";\n    done\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		134C0D252604A63700DF9484 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226A72372688D4D300AE6CA8 /* ProcessCheckoutRequestDTOs.swift in Sources */,
+				226A722726878B2400AE6CA8 /* CardValidator.swift in Sources */,
 				13F839CA260DE503004ED3B3 /* LoginController.swift in Sources */,
+				226A72292687956100AE6CA8 /* CheckoutService.swift in Sources */,
+				226A72252687839B00AE6CA8 /* CardDetailsViewModel.swift in Sources */,
+				226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */,
+				226A72072687439200AE6CA8 /* ToastItems+Stub.swift in Sources */,
 				1362E9592604EAD3002F6892 /* CartViewController.swift in Sources */,
 				1362E9502604EA20002F6892 /* ShopViewController.swift in Sources */,
+				227356BE2685BD7200146688 /* CurrencyFormatService.swift in Sources */,
+				223EA1A82688E58D00B1E136 /* PaymentResult.swift in Sources */,
+				226A72352688D0D200AE6CA8 /* Endpoints.swift in Sources */,
+				227356B82685BAC200146688 /* Environment.swift in Sources */,
+				223EA1B12689010500B1E136 /* Assembly.swift in Sources */,
+				226A7223268782E000AE6CA8 /* Style.swift in Sources */,
+				223EA1A12688D74800B1E136 /* CheckoutRepository.swift in Sources */,
+				226A721C26876BAB00AE6CA8 /* Translations.swift in Sources */,
+				226A72092687460D00AE6CA8 /* LoginService.swift in Sources */,
+				226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */,
+				226A72122687676100AE6CA8 /* CardViewController.swift in Sources */,
 				1362E97B2605053E002F6892 /* SumUpCheckoutService.m in Sources */,
+				223EA1A32688D88300B1E136 /* Environment+Networking.swift in Sources */,
 				134C0D792604ABA400DF9484 /* ToastListViewController.swift in Sources */,
 				134C0D6E2604A82E00DF9484 /* RoundedRectButton.swift in Sources */,
 				134C0D2D2604A63700DF9484 /* AppDelegate.swift in Sources */,
+				22ACAB012685A63500E34A0B /* ShopViewModel.swift in Sources */,
+				226A720526873EC600AE6CA8 /* ToastListViewModel.swift in Sources */,
 				1362E984260506FB002F6892 /* CheckoutAPI.m in Sources */,
 				134C0D972604B64900DF9484 /* ToastCell.swift in Sources */,
+				226A7218268767DB00AE6CA8 /* CardDetailsCell.swift in Sources */,
 				134C0D2F2604A63700DF9484 /* SceneDelegate.swift in Sources */,
 				13F839D2260DE578004ED3B3 /* TokenResponse.swift in Sources */,
 				134C0D822604AFD800DF9484 /* ToastItem.swift in Sources */,
+				223EA1A62688D98C00B1E136 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +572,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134C0D442604A63800DF9484 /* ToastDeliveryTests.swift in Sources */,
+				223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */,
+				223EA1AF2688FF4900B1E136 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +744,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumup.challenge.toastdelivery;
 				PRODUCT_MODULE_NAME = ToastDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Toast Delivery/BridgingHeader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -566,6 +767,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sumup.challenge.toastdelivery;
 				PRODUCT_MODULE_NAME = ToastDelivery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Toast Delivery/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -695,6 +897,72 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		223EA19D2688D73300B1E136 /* XCRemoteSwiftPackageReference "networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timdolenko/networking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		226A7213268767B600AE6CA8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		226A721F2687808300AE6CA8 /* XCRemoteSwiftPackageReference "Typist" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/totocaster/Typist.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
+			};
+		};
+		227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivlevAstef/DITranquillity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		223EA19E2688D73300B1E136 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 223EA19D2688D73300B1E136 /* XCRemoteSwiftPackageReference "networking" */;
+			productName = Networking;
+		};
+		226A72002687399400AE6CA8 /* CoreUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreUI;
+		};
+		226A7214268767B600AE6CA8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226A7213268767B600AE6CA8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		226A72202687808300AE6CA8 /* Typist */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226A721F2687808300AE6CA8 /* XCRemoteSwiftPackageReference "Typist" */;
+			productName = Typist;
+		};
+		227356BA2685BAF100146688 /* DITranquillity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227356B92685BAF100146688 /* XCRemoteSwiftPackageReference "DITranquillity" */;
+			productName = DITranquillity;
+		};
+		22ACAB0A2685ACB200E34A0B /* CoreTools */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CoreTools;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 134C0D212604A63700DF9484 /* Project object */;
 }
