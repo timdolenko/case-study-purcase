@@ -30,8 +30,8 @@ class CardDetailsCell: UITableViewCell {
     weak var nameField: UITextField!
     weak var zipCodeField: UITextField!
     
-    var card: Card {
-        Card(
+    var card: CardViewModel {
+        CardViewModel(
             number: numberField.text,
             expiryYear: expiryYearField.text,
             expiryMonth: expiryMonthField.text,
@@ -120,8 +120,9 @@ class CardDetailsCell: UITableViewCell {
             make.left.equalToSuperview().offset(horizontalMargin)
             make.right.equalToSuperview().offset(-horizontalMargin)
         }
-        nameField.keyboardType = .namePhonePad
+        nameField.keyboardType = .default
         nameField.textContentType = .name
+        nameField.autocapitalizationType = .words
         nameField.placeholder = translations.name
     }
     

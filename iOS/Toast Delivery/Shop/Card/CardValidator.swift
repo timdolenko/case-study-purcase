@@ -12,23 +12,15 @@ protocol CardValidator {
 class CardValidatorLive: CardValidator {
     
     func validate(_ card: Card) -> Bool {
-        guard let number = card.number,
-              let yy = card.expiryYear,
-              let mm = card.expiryMonth,
-              let cvv = card.cvv,
-              let ownersName = card.ownersName,
-              let zipCode = card.zipCode
-        else { return false }
-        
-        guard number.isNumber,
-              yy.isNumber,
-              yy.count == 2,
-              mm.isNumber,
-              mm.count == 2,
-              cvv.isNumber,
-              zipCode.isNumber,
-              !ownersName.isEmpty,
-              !ownersName.containsNumbers
+        guard card.number.isNumber,
+              card.expiryYear.isNumber,
+              card.expiryYear.count == 2,
+              card.expiryMonth.isNumber,
+              card.expiryMonth.count == 2,
+              card.cvv.isNumber,
+              card.zipCode.isNumber,
+              !card.ownersName.isEmpty,
+              !card.ownersName.containsNumbers
         else { return false }
         
         return true

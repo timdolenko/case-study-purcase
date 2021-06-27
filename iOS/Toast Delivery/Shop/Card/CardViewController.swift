@@ -51,6 +51,19 @@ class CardViewController: UIViewController {
         setupDoneButton()
         setupKeyboard()
         setupValidation()
+        bind()
+        viewModel.viewDidLoad.send(())
+    }
+    
+    private func bind() {
+        bindings.collect {
+            viewModel.failure.sink { [unowned self] error in
+                showError(error: error)
+            }
+            viewModel.result.sink { [unowned self] result in
+                handle(paymentResult: result)
+            }
+        }
     }
     
     private func setupTableView() {
@@ -127,5 +140,37 @@ class CardViewController: UIViewController {
             .map { $0 ? 1 : 0.3 }
             .assign(to: \.alpha, on: doneButton)
             .store(in: &bindings)
+    }
+}
+
+extension CardViewController {
+    func handle(paymentResult: PaymentResult) {
+        let alert = UIAlertController(
+            title: "",
+            message: "Payment is \(paymentResult.rawValue).",
+            preferredStyle: .alert
+        )
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
+            dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+fileprivate extension UIViewController {
+    func showError(error: Error) {
+        let alert = UIAlertController(
+            title: "Error",
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [unowned self] _ in
+            dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+        present(alert, animated: true, completion: nil)
     }
 }

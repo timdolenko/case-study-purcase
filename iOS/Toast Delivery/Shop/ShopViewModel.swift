@@ -3,11 +3,38 @@ import Combine
 
 class ShopViewModel {
     @Published var selectedToast: ToastItem?
+    var checkout: CheckoutResponse?
+    
     var goToCardDetails = PassthroughSubject<Void, Never>()
+    var result = PassthroughSubject<PaymentResult, Never>()
+    var failure = PassthroughSubject<Error, Never>()
     
     private var bindings = Set<AnyCancellable>()
     
-    init() {}
+    init() {
+        bind()
+    }
+    
+    func bind() {
+        goToCardDetails
+            .compactMap { [weak self] in self?.selectedToast }
+            .flatMap {
+                env.checkoutService.createCheckout(toast: $0)
+            }
+            .catch({ [weak self] error -> AnyPublisher<CheckoutResponse, Never> in
+                self?.failure.send(error)
+                return Empty<CheckoutResponse, Never>(completeImmediately: true)
+                    .eraseToAnyPublisher()
+            })
+            .map { response -> CheckoutResponse? in response }
+            .assign(to: \.checkout, on: self)
+            .store(in: &bindings)
+        
+        $selectedToast
+            .map { toast -> CheckoutResponse? in nil }
+            .assign(to: \.checkout, on: self)
+            .store(in: &bindings)
+    }
     
     lazy var cartViewModel: CartViewModel = {
         let viewModel = CartViewModel()
@@ -32,25 +59,8 @@ class ShopViewModel {
          return viewModel
     }()
     
-    func makeCardDetailsViewModel() -> CardDetailsViewModel {
-        let vm = CardDetailsViewModel()
-        
-        vm.didTapDone
-            .first()
-            .compactMap { [weak self] in self?.selectedToast }
-            .flatMap {
-                env.checkoutService.checkout(toast: $0)
-                    .catch { error -> AnyPublisher<CheckoutResponse, Never> in
-                        Empty(completeImmediately: true)
-                            .eraseToAnyPublisher()
-                    }
-            }
-            .sink { v in
-                print(v)
-            }
-            .store(in: &bindings)
-        
-        
-        return vm
+    func makeCardDetailsViewModel() -> CardDetailsViewModel? {
+        guard let toast = selectedToast else { return nil }
+        return CardDetailsViewModel(toast: toast)
     }
 }

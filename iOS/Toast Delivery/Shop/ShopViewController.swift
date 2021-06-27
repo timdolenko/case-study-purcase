@@ -31,26 +31,12 @@ class ShopViewController: UIViewController {
     
     // Note: should be move to Coordinator
     private func setupGoToCardDetails() {
-//        viewModel.goToCardDetails.sink { [unowned self] _ in
-//            let vc = CardViewController()
-//            vc.viewModel = viewModel.makeCardDetailsViewModel()
-//
-//            present(vc, animated: true, completion: nil)
-//        }
-//        .store(in: &bindings)
-        
-        viewModel
-            .goToCardDetails
-            .compactMap { [weak self] in self?.viewModel.selectedToast }
-            .flatMap {
-            env.checkoutService.checkout(toast: $0)
-                .catch { error -> AnyPublisher<CheckoutResponse, Never> in
-                    Empty(completeImmediately: true)
-                        .eraseToAnyPublisher()
-                }
-        }
-        .sink { v in
-            print(v)
+        viewModel.goToCardDetails.sink { [unowned self] _ in
+            guard let vm = viewModel.makeCardDetailsViewModel() else { return }
+            let vc = CardViewController()
+            vc.viewModel = vm
+
+            present(vc, animated: true, completion: nil)
         }
         .store(in: &bindings)
     }
