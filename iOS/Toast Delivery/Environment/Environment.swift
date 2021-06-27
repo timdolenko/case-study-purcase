@@ -46,12 +46,3 @@ class Environment {
 }
 
 extension Environment: Assembly {}
-
-protocol Assembly {
-    var container: DIContainer { get }
-}
-extension Assembly {
-    func resolve<T>() -> T {
-        container.resolve()
-    }
-}
