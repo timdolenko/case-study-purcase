@@ -11,7 +11,6 @@
 		134C0D2F2604A63700DF9484 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D2E2604A63700DF9484 /* SceneDelegate.swift */; };
 		134C0D362604A63800DF9484 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134C0D352604A63800DF9484 /* Assets.xcassets */; };
 		134C0D392604A63800DF9484 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134C0D372604A63800DF9484 /* LaunchScreen.storyboard */; };
-		134C0D442604A63800DF9484 /* ToastDeliveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */; };
 		134C0D4F2604A63800DF9484 /* ToastDeliveryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D4E2604A63800DF9484 /* ToastDeliveryUITests.swift */; };
 		134C0D6E2604A82E00DF9484 /* RoundedRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D6D2604A82E00DF9484 /* RoundedRectButton.swift */; };
 		134C0D792604ABA400DF9484 /* ToastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134C0D782604ABA400DF9484 /* ToastListViewController.swift */; };
@@ -31,6 +30,7 @@
 		223EA1A32688D88300B1E136 /* Environment+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A22688D88300B1E136 /* Environment+Networking.swift */; };
 		223EA1A62688D98C00B1E136 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A52688D98C00B1E136 /* Card.swift */; };
 		223EA1A82688E58D00B1E136 /* PaymentResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1A72688E58D00B1E136 /* PaymentResult.swift */; };
+		223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */; };
 		226A71FF2687385700AE6CA8 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7F40C26872A2100D52545 /* Secrets.swift */; };
 		226A72012687399400AE6CA8 /* CoreUI in Frameworks */ = {isa = PBXBuildFile; productRef = 226A72002687399400AE6CA8 /* CoreUI */; };
 		226A720326873E9900AE6CA8 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A720226873E9900AE6CA8 /* CartViewModel.swift */; };
@@ -80,7 +80,6 @@
 		134C0D382604A63800DF9484 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		134C0D3A2604A63800DF9484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134C0D3F2604A63800DF9484 /* Toast DeliveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast DeliveryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDeliveryTests.swift; sourceTree = "<group>"; };
 		134C0D452604A63800DF9484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134C0D4A2604A63800DF9484 /* Toast DeliveryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toast DeliveryUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		134C0D4E2604A63800DF9484 /* ToastDeliveryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastDeliveryUITests.swift; sourceTree = "<group>"; };
@@ -104,6 +103,7 @@
 		223EA1A22688D88300B1E136 /* Environment+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Networking.swift"; sourceTree = "<group>"; };
 		223EA1A52688D98C00B1E136 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		223EA1A72688E58D00B1E136 /* PaymentResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResult.swift; sourceTree = "<group>"; };
+		223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewModelTest.swift; sourceTree = "<group>"; };
 		226A720226873E9900AE6CA8 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		226A720426873EC600AE6CA8 /* ToastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastListViewModel.swift; sourceTree = "<group>"; };
 		226A72062687439200AE6CA8 /* ToastItems+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToastItems+Stub.swift"; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		134C0D422604A63800DF9484 /* Toast DeliveryTests */ = {
 			isa = PBXGroup;
 			children = (
-				134C0D432604A63800DF9484 /* ToastDeliveryTests.swift */,
 				134C0D452604A63800DF9484 /* Info.plist */,
+				223EA1AC2688F92700B1E136 /* CardDetailsViewModelTest.swift */,
 			);
 			path = "Toast DeliveryTests";
 			sourceTree = "<group>";
@@ -565,7 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134C0D442604A63800DF9484 /* ToastDeliveryTests.swift in Sources */,
+				223EA1AD2688F92700B1E136 /* CardDetailsViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

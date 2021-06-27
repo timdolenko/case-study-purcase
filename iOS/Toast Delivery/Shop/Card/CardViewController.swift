@@ -107,6 +107,10 @@ class CardViewController: UIViewController {
         
         b.publisher(for: .touchUpInside)
             .map { _ in () }
+            .handleEvents(receiveOutput: { [unowned b] in
+                b.isEnabled = false
+                b.alpha = 0.3
+            })
             .receive(subscriber: AnySubscriber(viewModel.didTapDone))
     }
     
